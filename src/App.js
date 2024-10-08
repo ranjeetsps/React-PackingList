@@ -30,6 +30,7 @@ function Header({ packing_list, setPacking_list }) {
 
   function addItem(e) {
     e.preventDefault();
+    if (newItem === "") return;
     const newObj = { item_name: newItem, packed: false, quantity: 1 };
     setPacking_list((packing_list) => [newObj, ...packing_list]);
     setNewItem("");
